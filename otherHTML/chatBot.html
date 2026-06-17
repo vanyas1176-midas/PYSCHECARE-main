@@ -24,7 +24,7 @@
          performs the real session check.
     ──────────────────────────────────────────────────────────────────────── -->
     <script>
-       // AFTER (secure)
+       // Auth guard – secure
 (function () {
     if (typeof window.PSYCHECARE_TOKEN === 'undefined') {
         // Allow local static preview only; keep production behind PHP auth gateway.
@@ -40,15 +40,15 @@
         }
     }
 })();
-        if (isLocalStatic) {
-            console.log("Static/Local HTML view: bypassing PHP Auth Guard.");
-        } else {
-            window.location.replace('chatBot.php');
-        }
-    }
-})();
-        ();
     </script>
+
+    <!-- Hide the default p5.js canvas so it doesn't overlay the page and block clicks -->
+    <style>
+        canvas.p5Canvas {
+            display: none !important;
+            pointer-events: none !important;
+        }
+    </style>
 
     <!-- Add these styles for the typing indicator -->
     <style>
